@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elevate Studio | Lead Generation</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0a1024;
+  color: #f8faff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+header {
+  background: #0c1530;
+  padding: 20px 0;
+  border-bottom: 1px solid #263251;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #54e2e8;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #aab5d0;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #54e2e8;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid #52617e;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #5277ff, #7558ff);
+  color: white !important;
+  padding: 13px 20px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px #5277ff44;
+}
+
+.hero {
+  padding: 90px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.badge {
+  display: inline-block;
+  color: #54e2e8;
+  background: #54e2e814;
+  border: 1px solid #54e2e833;
+  padding: 7px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.1;
+  margin: 22px 0;
+  letter-spacing: -1.5px;
+}
+
+h1 span {
+  color: #54e2e8;
+}
+
+.hero p {
+  color: #aab5d0;
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #34415f;
+}
+
+.preview {
+  background: linear-gradient(145deg, #172449, #101831);
+  padding: 15px;
+  border: 1px solid #ffffff22;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px #0005;
+}
+
+.browser {
+  color: #aab5d0;
+  font-size: 12px;
+  padding: 5px 5px 15px;
+}
+
+.mockup {
+  background: #f7f9ff;
+  color: #101a37;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mock-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 17px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.mock-nav span {
+  color: #526dff;
+}
+
+.mock-hero {
+  background: linear-gradient(135deg, #edf2ff, #e2fbff);
+  padding: 30px 20px;
+}
+
+.mock-hero small {
+  color: #526dff;
+  font-weight: bold;
+}
+
+.mock-hero h2 {
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.mock-hero p {
+  color: #64708d;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.mock-button {
+  display: inline-block;
+  background: #526dff;
+  color: white;
+  padding: 10px 13px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 13px;
+}
+
+.stat {
+  text-align: center;
+  padding: 10px 3px;
+  border: 1px solid #e8ecf5;
+  border-radius: 7px;
+}
+
+.stat strong {
+  display: block;
+  color: #526dff;
+  font-size: 18px;
+}
+
+.stat small {
+  color: #64708d;
+  font-size: 10px;
+}
+
+section {
+  padding: 75px 0;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.section-title small {
+  color: #54e2e8;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.section-title p {
+  color: #aab5d0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.feature {
+  padding: 25px;
+  background: #ffffff08;
+  border: 1px solid #ffffff18;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  border-color: #54e2e855;
+}
+
+.icon {
+  color: #54e2e8;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #aab5d0;
+  font-size: 14px;
+}
+
+.process {
+  background: #0d1630;
+  border-top: 1px solid #ffffff15;
+  border-bottom: 1px solid #ffffff15;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.step-number {
+  color: #54e2e8;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.step h3 {
+  margin: 10px 0;
+}
+
+.step p {
+  color: #aab5d0;
+  font-size: 14px;
+}
+
+.cta-box {
+  background: linear-gradient(120deg, #172a57, #171d43);
+  border: 1px solid #ffffff20;
+  padding: 40px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.cta-box h2 {
+  font-size: clamp(26px, 4vw, 38px);
+  margin: 10px 0;
+}
+
+.cta-box p {
+  color: #aab5d0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+}
+
+.contact-grid h2 {
+  font-size: 35px;
+  margin: 12px 0;
+}
+
+.contact-grid p {
+  color: #aab5d0;
+  margin: 12px 0;
+}
+
+form {
+  background: #ffffff08;
+  border: 1px solid #ffffff18;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 13px;
+  background: #0c1530;
+  color: white;
+  border: 1px solid #34415f;
+  border-radius: 7px;
+  margin-bottom: 17px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #54e2e8;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.message {
+  color: #54e2e8;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+footer {
+  border-top: 1px solid #ffffff18;
+  padding: 25px 0;
+  color: #aab5d0;
+  font-size: 13px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .hero-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features, .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #0c1530;
+    padding: 22px 5%;
+    flex-direction: column;
+    align-items: stretch;
+    z-index: 20;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links .btn {
+    text-align: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  section {
+    padding: 55px 0;
+  }
+
+  .cta-box {
+    padding: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">elevate<span>.</span></a>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#benefits">Benefits</a>
+        <a href="#process">How it works</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn">Free consultation ↗</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="badge">✦ &nbsp; SMARTER DIGITAL GROWTH</div>
+
+      <h1>Turn more visitors into <span>real leads.</span></h1>
+
+      <p>
+        A clear message. A beautiful page. One powerful next step.
+        Help your business turn online attention into meaningful customer enquiries.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn">Let's grow your business ↗</a>
+        <a href="#benefits" class="btn secondary">Explore benefits</a>
+      </div>
+    </div>
+
+    <div class="preview">
+      <div class="browser">● &nbsp; ● &nbsp; ● &nbsp; yourbusiness.com</div>
+
+      <div class="mockup">
+        <div class="mock-nav">
+          NORTHSTAR
+          <span>LET'S TALK ↗</span>
+        </div>
+
+        <div class="mock-hero">
+          <small>GROW WITH CONFIDENCE</small>
+          <h2>Your next big opportunity starts here.</h2>
+          <p>A focused message designed to help the right customers take action.</p>
+          <a href="#contact" class="mock-button">BOOK A FREE CALL ↗</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><strong>01</strong><small>Clear offer</small></div>
+          <div class="stat"><strong>02</strong><small>Strong CTA</small></div>
+          <div class="stat"><strong>03</strong><small>Easy contact</small></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="benefits">
+  <div class="container">
+
+    <div class="section-title">
+      <small>WHY IT WORKS</small>
+      <h2>Designed to guide visitors toward action.</h2>
+      <p>Your page should do more than look good. It should make your offer easy to understand and the next step easy to take.</p>
+    </div>
+
+    <div class="features">
+      <article class="feature">
+        <div class="icon">✦</div>
+        <h3>Clear, focused message</h3>
+        <p>Explain what you offer, who it helps and why visitors should care—without unnecessary distractions.</p>
+      </article>
+
+      <article class="feature">
+        <div class="icon">↗</div>
+        <h3>Strong calls to action</h3>
+        <p>Guide people toward one meaningful action, like requesting a quote or booking a call.</p>
+      </article>
+
+      <article class="feature">
+        <div class="icon">▣</div>
+        <h3>Responsive design</h3>
+        <p>A polished layout that adapts to phones, tablets and desktop screens.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+
+    <div class="section-title">
+      <small>A SIMPLE PROCESS</small>
+      <h2>From first click to next step.</h2>
+      <p>Keep the journey simple, helpful and focused on the people you want to reach.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <div class="step-number">STEP 01</div>
+        <h3>Capture attention</h3>
+        <p>Use a strong headline that speaks directly to your ideal customer's needs.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">STEP 02</div>
+        <h3>Build confidence</h3>
+        <p>Present your key benefits and useful details in a clean, easy-to-scan layout.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">STEP 03</div>
+        <h3>Make action easy</h3>
+        <p>Give visitors a clear way to request information or take the next step.</p>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <div class="badge">READY WHEN YOU ARE</div>
+        <h2>Let's turn interest into opportunity.</h2>
+        <p>Tell us what you are building and what you want your landing page to achieve.</p>
+      </div>
+
+      <a href="#contact" class="btn">Start a conversation ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container contact-grid">
+
+    <div>
+      <div class="badge">GET IN TOUCH</div>
+      <h2>Have a project in mind?</h2>
+      <p>Share a few details about your business and your goal.</p>
+      <p>✉ hello@elevatestudio.example</p>
+      <p>◷ Replies within 1–2 business days</p>
+    </div>
+
+    <form id="leadForm">
+      <label for="name">Your name</label>
+      <input id="name" type="text" placeholder="e.g. Alex Morgan" required>
+
+      <label for="email">Email address</label>
+      <input id="email" type="email" placeholder="you@example.com" required>
+
+      <label for="goal">What would you like to achieve?</label>
+      <textarea id="goal" placeholder="Tell us about your project..." required></textarea>
+
+      <button type="submit" class="btn">Check my enquiry ↗</button>
+      <p class="message" id="formMessage"></p>
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+    <span>© <span id="year"></span> Elevate Studio. Demo website concept.</span>
+    <span>Designed with clarity. Built for action.</span>
+  </div>
+</footer>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function() {
+  navLinks.classList.toggle("open");
+  menuToggle.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    navLinks.classList.remove("open");
+    menuToggle.textContent = "☰";
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("leadForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const goal = document.getElementById("goal").value.trim();
+  const message = document.getElementById("formMessage");
+
+  if (!name || !email || !goal) {
+    message.textContent = "Please complete all fields.";
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    message.textContent = "Please enter a valid email address.";
+    return;
+  }
+
+  message.textContent = "Form checked successfully! This demo is not connected to a real inbox yet.";
+});
+</script>
+
+</body>
+</html>
